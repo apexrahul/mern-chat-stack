@@ -20,6 +20,10 @@ export default function Welcome() {
   return () =>{didCancel = true};
   }, []);
 
+  // console.log( JSON.parse(
+  //   localStorage.getItem(process.env.REACT_APP_LOCALHOST_KEY)
+  // )._id)
+
   return (
     <Container>
       <img src={Robot} alt="robot" />
