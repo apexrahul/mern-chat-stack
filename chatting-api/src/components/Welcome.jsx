@@ -8,7 +8,6 @@ export default function Welcome() {
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
-    let didCancel = false;
     async function getData(){
     setUserName(
       await JSON.parse(
@@ -17,7 +16,6 @@ export default function Welcome() {
     );
   }
   getData();
-  return () =>{didCancel = true};
   }, []);
 
   // console.log( JSON.parse(

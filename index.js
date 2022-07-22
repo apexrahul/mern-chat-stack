@@ -15,12 +15,23 @@ app.use(express.json());
 app.use("/api/auth", userRoutes)
 app.use("/api/messages", messageRoutes)
 
-app.use(express.static(path.join(__dirname, "build")))
+const __dirname1 = path.resolve();
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname, "/chatting-api/build")))
 
-+app.get("/*", (req, res) =>{
-  res.sendFile(path.join(__dirname, "build", 'index.html'))
+  app.get("*", (req, res) =>{
+    res.sendFile(path.resolve(__dirname1, "chatting-api", "build", 'index.html'))
+  
+  })
+  
+}else{
+  app.get("/", (req, res) => {
+    res.send("API is runnnig successfully")
+  })
+}
 
-})
+
+
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
