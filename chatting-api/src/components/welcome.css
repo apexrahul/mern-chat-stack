@@ -1,0 +1,16 @@
+
+.welcome-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+}
+span{
+    color: blue;
+}
+
+@media screen and (max-width:540px){
+
+}

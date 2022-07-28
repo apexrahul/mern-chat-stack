@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
+import './setAvatar.css'
 import axios from "axios";
 import loader from "../assets/loader.gif";
 import { ToastContainer, toast } from "react-toastify";
@@ -8,8 +8,6 @@ import { useNavigate } from "react-router-dom";
 import { setAvatarRoute } from "../utils/APIRoutes";
 import { AvatarGenerator } from 'random-avatar-generator';
  
-
-
 
 export default function SetAvatar() {
 
@@ -78,11 +76,11 @@ export default function SetAvatar() {
   return (
     <>
       {isLoading ? (
-        <Container>
+        <div className="avatar-container">
           <img src={loader} alt="loader" className="loader" />
-        </Container>
+        </div>
       ) : (
-        <Container>
+        <div className="avatar-container">
           <div className="title-container">
             <h1>Pick an Avatar as your profile picture</h1>
           </div>
@@ -95,7 +93,6 @@ export default function SetAvatar() {
                   }`}
                 >
                   <img
-                
                     src={avatar}
                     alt="avatar"
                     onClick={() => setSelectedAvatar(index)}
@@ -108,64 +105,8 @@ export default function SetAvatar() {
             Set as Profile Picture
           </button>
           <ToastContainer />
-        </Container>
+        </div>
       )}
     </>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 3rem;
-  background-color: #131324;
-  height: 100vh;
-  width: 100vw;
-
-  .loader {
-    max-inline-size: 100%;
-  }
-
-  .title-container {
-    h1 {
-      color: white;
-    }
-  }
-  .avatars {
-    display: flex;
-    gap: 2rem;
-
-    .avatar {
-      border: 0.4rem solid transparent;
-      padding: 0.4rem;
-      border-radius: 5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.5s ease-in-out;
-      img {
-        height: 6rem;
-        transition: 0.5s ease-in-out;
-      }
-    }
-    .selected {
-      border: 0.4rem solid #4e0eff;
-    }
-  }
-  .submit-btn {
-    background-color: #4e0eff;
-    color: white;
-    padding: 1rem 2rem;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 0.4rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    &:hover {
-      background-color: #4e0eff;
-    }
-  }
-`;

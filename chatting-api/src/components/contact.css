@@ -1,0 +1,141 @@
+ body{
+   margin-left: 0;
+   overflow: hidden;
+}
+
+.contact-container{
+   background-color: black;
+   display: grid;
+   grid-template-rows: 10% 75% 15%;
+   overflow: hidden;
+}
+
+.brand {
+     margin: 10px;
+     display: flex;
+     align-items: center;
+     gap: 1rem;
+     justify-content: center;
+}
+
+.brand img {
+       height: 2rem;
+}
+
+.brand h3{
+       color: white;
+       text-transform: uppercase;
+}
+   
+.contacts {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     overflow: auto;
+     gap: 0.8rem;
+     height: 25%;
+}     
+
+.contacts::-webkit-scrollbar {
+       width: 0.6rem;
+}       
+.contacts::-webkit-scrollbar-thumb {
+         background-color: #ffffff39;
+         width: 0.1rem;
+         border-radius: 1rem;
+}
+
+.contact {
+       background-color: #ffffff34;
+       min-height: 4%;
+       cursor: pointer;
+       width: 90%;
+       border-radius: 0.7rem;
+       border: 1px solid transparent;
+       padding: 0.4rem;
+       display: flex;
+       gap: 1rem;
+       align-items: center;
+       transition: 0.5s ease-in-out;
+       overflow: hidden;
+}
+
+
+.username h3{
+           color: white;
+         }
+       
+.selected {
+    border: 1px solid rgb(26, 26, 59);
+}
+
+.current-user {
+     background-color: #0d0d30;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 2rem;
+}
+
+.avatar~img{
+     height: 6rem;
+     max-inline-size: 100%;
+}
+    
+.username h2{
+     color: white;
+}
+
+.hamburger-menu{
+     display: none;
+}
+
+@media  screen and (max-width:600px){
+.contact-container{ 
+     display: grid;
+     width: 100%;
+     grid-template-columns: 1fr;
+     text-align: center;
+     justify-content: center;
+     position: absolute;
+     left: 0;
+}
+.brand{
+     margin: auto;
+     padding: 10px;
+}
+.contacts{
+     display:none;
+}
+.current-user{
+     display: none;
+}
+.brand a{
+     display: block;
+     position: absolute;
+     left: 10px;
+     margin:10px;
+}
+
+.mobile-icon-contact{
+     margin: 30px;
+     height: 80vh;
+     overflow: hidden;
+     overflow-y: scroll;
+ 
+}
+.mobile-icon-user{
+     display: flex;
+     flex-direction: row;
+     align-items:center;
+     justify-content:center;
+     gap: 1rem;
+     overflow:hidden;
+     background-color: #9a86f3;
+  
+}
+.contact{
+     margin-bottom: 1rem;
+     min-height: 3%;
+}
+}
