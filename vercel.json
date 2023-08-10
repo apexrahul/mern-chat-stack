@@ -1,6 +1,6 @@
 {
     "version": 2,
-    
+    "rewrites": [{ "source": "/(.*)", "destination": "/chatting-api" }],
     "builds":[
         {
             "src": "./index.js",
@@ -12,6 +12,5 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ],
-    "rewrites": [{ "source": "/(.*)", "destination": "/chatting-api" }]
+    ]    
 }
