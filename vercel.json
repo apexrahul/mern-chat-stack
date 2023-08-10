@@ -12,7 +12,5 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ],
-    
-    "rewrites": [{ "source": "/(.*)", "destination": "/chatting-api" }]
+    ]
 }
