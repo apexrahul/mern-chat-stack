@@ -17,10 +17,10 @@ app.use("/api/messages", messageRoutes)
 
 const __dirname1 = path.resolve();
 if(process.env.NODE_ENV === 'production'){
-  app.use(express.static(path.join(__dirname, "/chatting-api/build")))
+  app.use(express.static(path.join(__dirname, "/chatting-api/public")))
 
   app.get("*", (req, res) =>{
-    res.sendFile(path.resolve(__dirname1, "chatting-api", "build", 'index.html'))
+    res.sendFile(path.resolve(__dirname, "chatting-api", "public", 'index.html'))
   
   })
   
